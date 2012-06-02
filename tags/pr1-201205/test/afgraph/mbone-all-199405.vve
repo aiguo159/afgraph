@@ -1,0 +1,253 @@
+# MBone in US, May 1994
+# nodes are identified by name
+# format
+vve
+# number of nodes
+84
+# number of links
+90
+# bi-directional link
+bi
+# list of nodes, nobe_name
+# US
+nwnet
+barrnet
+nsi
+norad
+hawaii
+sdsc
+sesqui
+ncar
+midnet
+uiuc
+psc
+merit
+jvnc
+arpa
+mcnc
+ans
+psi
+gatech
+sura
+alternet
+cornell
+nearnet
+# CA
+ubc
+dnd
+doc
+sofkin
+# kr
+kotel
+# JP
+wide
+caren
+tokyo
+kokudai
+nara
+astem
+kyoto
+kyushu
+oita
+kyutech
+# AU
+aarnet
+nsw
+old
+act
+rmit
+ntu
+uwa
+adelaide
+utas
+# NZ
+waikato
+# MX
+udlap
+# NO
+sintef
+uio
+unit
+# SE
+ebone
+chalmers
+kth
+# FI
+funet
+tut
+eunet
+# SU
+spb
+# UK 6
+ucl
+ulcc
+manchester
+ral
+cambridge
+edinburgh
+# BE
+ulb
+# PT
+inesc
+# ES
+rediris
+# NL
+surfnet
+ripe
+# FR
+edf
+cnet
+inria
+cnam
+in2p3
+# CH
+cern
+# IT
+infn
+cnr
+# DE
+ecrc
+dfn
+gmd
+stuttgart
+erlangen
+hannover
+paderborn
+#
+# list of connections: node_name nodename bandwidth
+nwnet barrnet 34
+nwnet ncar 34
+barrnet nsi 34
+nsi hawaii 2
+nsi sdsc 34
+nsi psc 34
+nsi norad 34
+sdsc sesqui 34
+sesqui psi 34
+ncar midnet 34
+ncar uiuc 34
+uiuc sesqui 34
+uiuc psc
+psc merit 34
+psc nearnet 34
+merit jvnc 34
+jvnc arpa 34
+arpa mcnc 2
+arpa ans 34
+ans gatech 34
+ans sura 34
+ans psi 34
+sura alternet 2
+arpa cornell 34
+cornell nearnet 34
+#
+# US - CA
+nwnet ubc 2
+nearnet dnd 2
+# within CA
+dnd doc 2
+dnd sofkin 2
+#
+# US - KR
+nsi kotel 2
+#
+# US - JP
+nsi wide 2
+# within JP
+wide caren 2
+wide tokyo 2
+tokyo kokudai 2
+wide nara 2
+wide astem 2
+astem kyoto 2
+astem kyushu 2
+kyushu oita 2
+kyushu kyutech 2
+#
+# US - AU
+nsi aarnet 2
+# within AU
+aarnet nsw 2
+aarnet old 2
+aarnet act 2
+aarnet rmit 2
+rmit ntu 2
+aarnet uwa 2
+aarnet adelaide 2
+aarnet utas 2
+#
+# US - NZ
+nsi waikato 2
+#
+# US - MX
+sesqui udlap 2
+#
+# US - SE
+psi ebone 2
+# within SE
+ebone chalmers 2
+ebone kth 2
+# SE - NO
+ebone sintef 2
+# within NO
+sintef uio 34
+sintef unit 2
+# SE - FI
+ebone funet 2
+# within FI
+funet tut 2
+funet eunet
+# FI - SU
+eunet spb 2
+#
+# US - UK
+sura ucl 2
+# within UK
+ucl ulcc 34
+ulcc manchester 34
+ulcc cambridge 34
+manchester ral 34
+ral edingurgh 34
+edinburgh cambridge 34
+#
+# UK - BE
+ulcc ulb 2
+# UK - PT
+ucl inesc 2
+# UK - NL
+ulcc surfnet 2
+# within NL
+surfnet ripe 3
+# BE - ES
+ulb rediris 2
+#
+# US - CH
+ans cern 2
+# US - FR
+psi edf
+# within FR
+edf cnet 2
+edf inria 2
+edf cnam 2
+# FR - CH
+in2p3 cern 2
+# FR - NL
+edf ripe 2
+# FR - DE
+edf ecrc 2
+#
+# CH - IT
+cern infn
+# IT - ES
+cnr rediris 2
+# NL - DE
+surfnet dfn 2
+#
+# within DE
+dfn paderborn 2
+dfn gmd 2
+gmd stuttgart 2
+stuffgart erlangen 2
+erlangen hannover 2
+hannover paderborn 2
+

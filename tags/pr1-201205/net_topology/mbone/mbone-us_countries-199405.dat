@@ -1,0 +1,99 @@
+# MBone in US, May 1994
+# nodes are identified by name
+# number of nodes
+20
+# number of links
+47
+# bi-directional link
+bi
+# list of nodes, nobe_name
+nwnet
+barrnet
+nsi
+hawaii
+sdsc
+sesqui
+ncar
+midnet
+uiuc
+psc
+merit
+jvnc
+arpa
+mcnc
+anspsi
+gatech
+sura
+alternet
+cornell
+nearnet
+# countries
+CA
+KR
+JP
+AU
+NZ
+MX
+SE
+NO
+FI
+SU
+UK
+PT
+ES
+BE
+NL
+FR
+CH
+IT
+DE
+#
+# list of connections: node_name nodename bandwidth
+nwnet barrnet 34
+nwnet ncar 34
+barrnet nsi 34
+nsi hawaii 2
+nsi sdsc 34
+nsi psc 34
+sdsc sesqui 34
+sesqui anspsi 34
+ncar midnet 34
+ncar uiuc 34
+uiuc sesqui 34
+uiuc psc
+psc merit 34
+psc nearnet 34
+merit jvnc 34
+jvnc arpa 34
+arpa mcnc 2
+arpa anspsi 34
+anspsi gatech 34
+anspsi sura 34
+sura alternet 2
+arpa cornell 34
+cornell nearnet 34
+# inter-country connections
+nwnet CA 2
+nearnet CA 2
+nsi KR 2
+nsi JP 2
+nsi AU 2
+nsi NZ 2
+sesqui MX 2
+sura UK 2
+anspsi SE 2
+anspsi CH 2
+anspsi FR 2
+SE NO 2
+SE FI 2
+SE NL 2
+FI SU 2
+UK PT 2
+UK BE 2
+UK NL 2
+BE ES 2
+NL FR 2
+FR CH 2
+FR DE 2
+CH IT 2
+IT ES 2

@@ -1,0 +1,32 @@
+# integer vertex, integer edge data
+#
+# format: arbitrary vertex and an arbitrary edge data
+# edge given by: index1 index2 edge_data
+vie
+# number of nodes
+5
+# number of links
+12
+# directional: di for uni-direational, bi for bi-direction,
+# un for un-directional
+di
+# list of vertices
+0
+1
+2
+3
+4
+# list of arcs
+# index1, index2, weight
+0 1 1
+0 3 2
+1 0 1
+1 2 4
+2 1 4
+2 3 2
+2 4 3
+3 0 2
+3 2 2
+3 4 1
+4 2 3
+4 3 1

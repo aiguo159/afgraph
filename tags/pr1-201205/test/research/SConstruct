@@ -1,0 +1,21 @@
+
+aflTopDir = '../../../afl'
+afgTopDir = '../..'
+
+env = Environment( CPPPATH = [ afgTopDir+'/include', aflTopDir+'/include' ] )
+
+debug = ARGUMENTS.get('debug', 0)
+if int(debug):
+	env.Append( CCFLAGS = '-Wall -g -DDEBUG -std=c++0x' )
+	outputDir = 'output_dbg'
+else:
+	env.Append( CCFLAGS = '-Wall -O2 -std=c++0x' )
+	outputDir = 'output_opt'
+
+VariantDir( outputDir, '.', duplicate=0 )
+
+env.Program( outputDir + '/t_import_asconnect.cpp' )
+
+env.Program( outputDir + '/t_import_gitalt.cpp' )
+
+env.Program( outputDir + '/t_nmcbase.cpp' )

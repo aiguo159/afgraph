@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classafg_1_1IVertex.html" title="afg::IVertex\&lt; VertexDT, EdgeDT, std::list\&lt; CiEdge\&lt; EdgeDT \&gt; \&gt;::iterator, std::list\&lt; CiEdge\&lt; EdgeDT \&gt; \&gt;::const_iterator \&gt;" alt="" coords="5,5,747,35"/>
+<area shape="rect" id="node3" href="$classafg_1_1CiVertex.html" title="afg::CiVertex\&lt; VertexDT, EdgeDT \&gt;" alt="" coords="795,5,1029,35"/>
+</map>
