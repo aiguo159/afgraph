@@ -1,0 +1,253 @@
+/**
+@mainpage afgraph: A Framework for Graph Algorithms
+
+@section intro Introduction
+
+My Ph.D. research (1997-2001) was mostly on graph algorithm, in some sense.
+Most of my work was to come out with some algorithms to solve some particular
+problems and wrote some code to simulate the algorithms (in a particular
+computer network setting) and compare them with some other algorithms on
+certain metrics. Most of the code that I wrote were specific to certain
+problems and it is mostly useless to others; the problems that I worked on
+were no longer relevant anyway. However, a small core portion of the code is
+generic in nature -- it served as the basis for me to write implementations of
+various graph-related algorithms. A few months after I graduated, I packaged
+that portion of code and gave it to a friend of mine upon his request.
+I have never asked him if he found the code useful or not. However, it is
+always my belief that it can be useful to certain people who happen to work
+in this domain. So I decided to release this code to the public, a good 11-years
+after my graduation. Better late than never.
+
+The code has been basically the same as 11 years ago, except some small updates
+that have been made to make it compile with newer versions of compilers --
+C++ the language and compilers have evolved quite a bit over the time.
+As of now (March 2012), it compiles with
+the following: g++ 4.6.1 on Linux, g++ 4.3.4 under Cygwin on Windows,
+Microsoft Visual C++ 2010 (Express Edition).
+Because of the age of the code, it may look a little old-fashioned or out of
+date, or may not. Either way, I hope that some people will find it useful.
+
+@subsection sub_inside What's Inside
+
+Under the top directory, you will find the following:
+
+\verbatim
+docs/: documentation source
+docs-gen/: generated documentations, in pdf, chm, qch format
+    html/: documentations in html
+include/: header files
+    afl/: some template utilties
+    afgraph/: the main stuff
+    news/: a couple of files for an unfinished network simulator
+    research/: code for research purpose (e.g., code to import "asconnect" file,
+        may be useful to others)
+net_topology/: data files of actual network topology
+    mbone/: (very old) mbone topology
+test/: code for sanity test
+    afgraph/
+    news/
+    research/
+src/: .cpp file, just one
+    news/
+examples/: examples, juse one for now.
+
+\endverbatim
+
+@subsection sub_docs Documentations
+
+Code has been documented extensively with doxygen tags.
+Documentations in pdf, chm, qch and html format are generated from the source
+and included in this release.
+You may run doxygen to re-generate them if you add/modify source code
+documentations: go to docs/, run "doxygen afgraphdoc_doxygen-chm.conf"
+and "doxygen afgraphdoc_doxygen-html.conf".
+
+You need the following tools to produce documentations other than html:
+(1) pdflatex to generate the pdf version
+(go to docs-gen/latex, run "pdflatex" twice);
+(2) Microsoft HTML Help Workshop to produce chm file
+(open docs-gen/chm/index.hhp in HTML Help Workshop);
+(3) qhelpgenerator from Qt SDK to create qch file
+(edit docs/afgraphdoc_doxygen-chm.conf to point to where qhelpgenerator is
+installed), which can be opened with Qt assistant.
+
+@section start Get Started
+
+@subsection sub_example An Example
+
+Under examples/, you will find one example: e_graph.cpp. This file
+demonstrates how to create a graph and run a couple of algorithms included
+in this package.
+
+\verbatim
+
+// mem_fun should give us this; but couldn't get it pass the compiler.
+// Too much templating, I guess.
+char get_vertex_d( const CiVertex<char, int> &v )
+{
+    return v.vertex_d();
+}
+
+int main()
+{
+    // Create a graph with char vertext type (i.e., each vertex is identified
+    // by a char) and integer edge type (i.e., each edge has an integer value).
+    // It has 10 vertices and 'z' will not be used as a vertex id.
+    // An unused vertex id is needed to populate empty spots (if any) in the
+    // vertex array.
+    CGraph<char, int> gra( 6, 'z' );
+
+    // insert all the nodes; their IDs are ['a'..'f'].
+    for( int i=0; i<6; ++i ){
+        gra.insert_v( i+97 ); // 97 is ASCII 'a'
+    }
+
+    // Now insert all the edges. It is a non-directed graph, each edge is
+    // represented by 2 directed edges.
+    gra.insert_2e( 'a', 'b', 3 ); gra.insert_2e( 'a', 'd', 4 );
+    gra.insert_2e( 'b', 'c', 2 ); gra.insert_2e( 'b', 'd', 3 );
+    gra.insert_2e( 'c', 'f', 6 ); gra.insert_2e( 'd', 'e', 2 );
+    gra.insert_2e( 'e', 'f', 3 );
+
+    // print out the graph; note the difference between vertex ID and vertex index.
+    std::cout << "graph now: " << std::endl << gra << std::endl;
+
+    // let's check if this graph is connected.
+    std::cout << "connected?: " << (is_connected( gra )?"yes":"no") << std::endl;
+
+    // All graph algorithms operate on vertex indices; let's find the index
+    // for node 'c' and 'e'.
+    int idxC = gra.find_index( 'c' );
+    int idxE = gra.find_index( 'e' );
+    cout << "node 'c' is at "<< idxC << ", and node 'e' is at " << idxE << endl;
+
+    /* Run dijkstra algorithm to find the shorted path from 'c' to 'e', using
+    each edge's integer value as the weight -- so we pass functor
+    afl::pointer2value<int>() for that purpose. The edge weight function passed
+    to dijkstra_t() will be called with an pointer to an edge.
+    */
+    CPath lp;
+    cout << "shortest path by edge weight from node 'c' to 'e' result: "
+         << dijkstra_t<CGraph<char, int> >(
+             gra, idxC, idxE, afl::pointer2value<int>(), 1000, lp )
+         << endl << "path found (by indices): " << lp << endl;
+    cout << "path found (by ID): " ;
+    lp.output( cout, gra, get_vertex_d ) << endl;
+    //lp.output( cout, gra, mem_fun( &ciVertex_t::vertex_d ) ) << endl;
+
+    /* Run dijkstra algorithm to find the shorted path from 'c' to 'e', each
+    edge having weight 1 -- equivalent to finding minimum hop-count path.
+    */
+    CPath lp2;
+    cout << "shortest path by hop-count from node 'c' to 'e' result: "
+         << dijkstra_t<CGraph<char, int> >(
+             gra, idxC, idxE, afl::runit_p<int>(), 1000, lp2 )
+         << endl << "path found (by indices): " << lp2 << endl;
+    cout << "path found (by ID): " ;
+    lp2.output( cout, gra, get_vertex_d ) << endl;
+
+    return 0;
+}
+
+\endverbatim
+
+Under test/afgraph, there are some test code that I used for sanity test --
+they can serve as examples of how to use the framework.
+To learn how to use the framework to implement your own graph algorithms,
+you may check out the following files under include/afgraph as examples:
+shortest_path.h, graph_alg.h, kthsp.h, tree_alg.h.
+
+
+@subsection sub_cmp_run Compile and Run
+
+For the example and test programs, a build tool called Scons is used
+-- instead of Makefile, the build script file is named Scontruct.
+Compared with conventional make, Scons has some advantages;
+for small profject, it is fairly easy and straight-forward.
+If you don't have Scons installed already on your system, you need to
+install it.
+
+On a terminal under Linux/BSD/*nix/Windows, go to examples/, type the command
+"scons" or "scons.bat", it will build the example program with the output under
+examples/output_opt/; type the command "./output_opt/e_graph" to run it
+("./output_opt/e_graph.exe" under Windows). To build a debug version of
+the program with debug symbols, do "scons debug=1" and the output will be
+under output_dbg/.
+
+Go to test/afgraph, do "scons" or "scons debug=1" to build all the test
+programs.
+
+Note 1: some test programs use some data files which are located in the same
+directory as the source file; e.g., under test/afgraph/, t_graph_input.cpp uses
+gra1.vve and a few others. You need to run the compiled program from the
+directory where the data files are located so the test program can find them;
+e.g., under test/afgraph/, you run "./output_opt/t_graph_input".
+
+Note 2: "-Wall" is enabled in Sconstruct files. With gcc, all code compiles
+without any warning. However, with MS Visual C++, it generates a lot of
+warnings which don't really have anything to do with the code here. You may
+disable "-Wall" on for Visual C++.
+
+
+@section design Concept and Design
+
+The framework implements an adjacency-list representation of graphs:
+vertices are stored as an vecrtor with each elements accessible via indices, and
+all edges of a vertex is stored in a list accessible via iterators.
+Vertices can be accessed via iterators as well.
+Each vertex should have some uniquely identifiable data (identifier),
+while each edge may have some arbitrary data.
+
+An algorithm would use indices or iterators to access the vertices and
+use iterators to access the edges and operate on them.
+For an algorithm that takes a vertex and vertices as input, usually the input
+can ben in the form of index or indices -- there is really no need to
+use vertex "identifiers" as input since index of a vertex can be found from
+a vertex identifier.
+
+The implementation supports (fairly) efficient insertion/deletion of vertices.
+A few helpers funtions are there to facilitate that:
+(1) because deletion can leave hole in the vertex vector, function is_in_use()
+can be used to test if the given index has a valid vertex or just empty;
+(2) vertex vector will dynamically grow when new ones are inserted,
+controlled by a growth factor.
+(3) vertex vector doesn't shrink by itself -- call function pack() to remove
+all holes in the vertex vector and store all vertices consecutively and
+thus shrink the vertex vector;
+(4) if you know the graph size beforehand, you can use reserve() to reserve
+the vertex vector.
+
+@subsection interface Framework as An Interface
+
+Adjacency-list is one possible representation of graphs, and implementation
+here is one possible implementation.
+For some algorithms, maybe a different representation or implementation
+works better.
+Algorithms implemented based on the framework is "portable" in the sense that
+you can easily use a different graph implementation without needing to re-write
+the algorithms as long as the new implementation provides the same interface
+as specified in graph_intf.h -- which basically specifies index and iterator
+access to vertices and iterator access to edges.
+
+
+@section interest Stuff of Interest
+
+export_gdl.h: utility to export gdl (graph description language) file that can
+be imported to graph visualization tools to visualize graphs.
+
+graph_gen.h: includes a graph generator based on B.M. Waxman's method;
+can be used to generate graphs to test graph algorithms.
+
+import_gitalt.h: utility to import graph from the alt file by GeorgiaTech graph
+generator.
+
+import_asconnect.h: utility to import graph from an "asconnect" files.
+Asconnect file is a list of AS's (Autonomous System in BGP routing)
+and their interconnections, *used to* be available for download from:
+http://www.antc.uoregon.edu/route-views/;
+however, when I checked recently, I didn't see them there, nor could I find
+them at http://www.routeviews.org/. You may need to contact them to see if
+those files are still available.
+
+
+*/

@@ -1,0 +1,36 @@
+# template to use with a shell script to automatically
+# generate makefile with all header dependencies
+# the shell script will create two macros (add at the beginning of
+# makefile): PROGRAMS, OBJS
+# Every cpp file in the current directory will be considered as
+# the main cpp file for a program.
+
+AFL   =   ../../../afl
+CC  =   g++
+
+AFGINC  = ../../include/
+
+INCLUDE = -I$(AFGINC) -I$(AFL)/include
+DEFINED =
+CFLAGS  = $(INCLUDE) $(DEFINED) -Wall -g
+
+# list object files for all testing programs here
+#OBJS       =   tbasics.o tgraph_intf.o tgraph.o
+
+SOURCES =   ${OBJS:.o=.cpp}
+.cpp.o	:
+	${CC} ${CFLAGS} -c $<
+
+makefile	:
+	cat makefile.mk >> $@
+	echo >> $@
+	echo "# automatically generated dependencies list:" >> $@
+	echo >> $@
+	${CC} ${CFLAGS} -M ${SOURCES} >> $@
+#   chmod -w $@
+
+clean	:
+	rm -f *.o *~ core makefile.mk
+
+cleanall:
+	rm -f *.o *~ core makefile.mk ${PROGRAMS}

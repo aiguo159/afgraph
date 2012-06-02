@@ -1,0 +1,20 @@
+
+aflTopDir = '../../afl'
+afgTopDir = '..'
+
+env = Environment( CPPPATH = [ afgTopDir+'/include', aflTopDir+'/include' ] )
+
+debug = ARGUMENTS.get('debug', 0)
+if int(debug):
+	env.Append( CCFLAGS = '-Wall -g -DDEBUG -std=c++0x' )
+	outputDir = 'output_dbg'
+else:
+	env.Append( CCFLAGS = '-Wall -O2 -std=c++0x' )
+	outputDir = 'output_opt'
+
+aflOutDir = outputDir + '/afl'
+
+#VariantDir( aflOutDir, aflSrcDir, duplicate=0 )
+VariantDir( outputDir, '.', duplicate=0 )
+
+env.Program( outputDir + '/e_graph.cpp' )

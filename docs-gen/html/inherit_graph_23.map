@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classafl_1_1general__except.html" title="General exception." alt="" coords="5,59,208,88"/>
+<area shape="rect" id="node3" href="$classafl_1_1init__failed.html" title="Initialization failure exception." alt="" coords="279,5,449,35"/>
+<area shape="rect" id="node5" href="$classafl_1_1mem__alloc__failed.html" title="Memory allocation failure exception." alt="" coords="256,59,472,88"/>
+<area shape="rect" id="node7" href="$classafl_1_1unknown__except.html" title="afl::unknown_except\&lt; str_type \&gt;" alt="" coords="257,112,471,141"/>
+</map>

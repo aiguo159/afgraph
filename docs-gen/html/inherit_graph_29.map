@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classstd_1_1binary__function.html" title="binary_function" alt="" coords="7,379,116,408"/>
+<area shape="rect" id="node3" href="$structafg_1_1edge__combine.html" title="afg::edge_combine\&lt; EdgeT, F1, F2 \&gt;" alt="" coords="169,5,409,35"/>
+<area shape="rect" id="node5" href="$structafg_1_1edge__empty.html" title="afg::edge_empty\&lt; EdgeT \&gt;" alt="" coords="199,59,380,88"/>
+<area shape="rect" id="node7" href="$structafg_1_1edge__label__ed.html" title="afg::edge_label_ed\&lt; EdgeT \&gt;" alt="" coords="193,112,385,141"/>
+<area shape="rect" id="node9" href="$structafg_1_1equal__i.html" title="predicate to test if the indices of two edges are the same." alt="" coords="220,165,359,195"/>
+<area shape="rect" id="node11" href="$structafg_1_1equal__n.html" title="predicate to test if the index of an edge is equal to an integer." alt="" coords="217,219,361,248"/>
+<area shape="rect" id="node13" href="$structafg_1_1IviConverter.html" title="afg::IviConverter\&lt; VDT1, VDT2 \&gt;" alt="" coords="180,272,399,301"/>
+<area shape="rect" id="node17" href="$structafg_1_1node__color.html" title="afg::node_color\&lt; VertexT \&gt;" alt="" coords="199,325,380,355"/>
+<area shape="rect" id="node19" href="$structafg_1_1node__combine.html" title="afg::node_combine\&lt; VertexT, F1, F2 \&gt;" alt="" coords="165,379,413,408"/>
+<area shape="rect" id="node21" href="$structafg_1_1node__empty.html" title="afg::node_empty\&lt; VertexT \&gt;" alt="" coords="195,432,384,461"/>
+<area shape="rect" id="node23" href="$structafg_1_1node__xyloc.html" title="afg::node_xyloc\&lt; VertexT \&gt;" alt="" coords="197,485,381,515"/>
+<area shape="rect" id="node25" href="$structafg_1_1title__ind.html" title="afg::title_ind\&lt; VertexT \&gt;" alt="" coords="208,539,371,568"/>
+<area shape="rect" id="node27" href="$structafg_1_1title__ivd.html" title="afg::title_ivd\&lt; VertexT \&gt;" alt="" coords="208,592,371,621"/>
+<area shape="rect" id="node29" href="$structafg_1_1title__vd.html" title="afg::title_vd\&lt; VertexT \&gt;" alt="" coords="209,645,369,675"/>
+<area shape="rect" id="node31" href="$structafg_1_1IviConverter.html" title="afg::IviConverter\&lt; VDT, VDT \&gt;" alt="" coords="187,699,392,728"/>
+<area shape="rect" id="node37" href="$structafg_1_1IviConverter.html" title="afg::IviConverter\&lt; VDT1, int \&gt;" alt="" coords="191,752,388,781"/>
+<area shape="rect" id="node15" href="$structafg_1_1viConverter.html" title="afg::viConverter\&lt; VDT1, VDT2 \&gt;" alt="" coords="463,272,676,301"/>
+<area shape="rect" id="node33" href="$structafg_1_1viConverter.html" title="afg::viConverter\&lt; VDT, VDT \&gt;" alt="" coords="469,699,669,728"/>
+<area shape="rect" id="node35" href="$structafg_1_1viCopier.html" title="afg::viCopier\&lt; VDT \&gt;" alt="" coords="725,699,872,728"/>
+<area shape="rect" id="node39" href="$structafg_1_1v2index.html" title="afg::v2index\&lt; VDT1 \&gt;" alt="" coords="495,752,644,781"/>
+</map>
