@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classstd_1_1unary__function.html" title="unary_function" alt="" coords="5,219,112,248"/>
+<area shape="rect" id="node3" href="$structafg_1_1IeConverter.html" title="afg::IeConverter\&lt; EDT1, EDT2 \&gt;" alt="" coords="160,5,376,35"/>
+<area shape="rect" id="node7" href="$structafg_1_1IvConverter.html" title="afg::IvConverter\&lt; VDT1, VDT2 \&gt;" alt="" coords="160,59,376,88"/>
+<area shape="rect" id="node11" href="$structafl_1_1pointer2value.html" title="Operator ( ) returns the value of a pointer,." alt="" coords="192,112,344,141"/>
+<area shape="rect" id="node13" href="$structafl_1_1ref2ref.html" title="Operator ( ) returns a const reference of a reference." alt="" coords="212,165,324,195"/>
+<area shape="rect" id="node15" href="$structafl_1_1ref2value.html" title="Operator ( ) returns the value of a reference." alt="" coords="204,219,332,248"/>
+<area shape="rect" id="node17" href="$structafl_1_1runit.html" title="Operator( ) always returns 1 for any reference passed." alt="" coords="217,272,319,301"/>
+<area shape="rect" id="node19" href="$structafl_1_1runit__p.html" title="Operator( ) always returns 1 for any pointer passed." alt="" coords="211,325,325,355"/>
+<area shape="rect" id="node21" href="$structafg_1_1IeConverter.html" title="afg::IeConverter\&lt; EDT, EDT \&gt;" alt="" coords="167,379,369,408"/>
+<area shape="rect" id="node27" href="$structafg_1_1IvConverter.html" title="afg::IvConverter\&lt; VDT, VDT \&gt;" alt="" coords="167,432,369,461"/>
+<area shape="rect" id="node5" href="$structafg_1_1eConverter.html" title="afg::eConverter\&lt; EDT1, EDT2 \&gt;" alt="" coords="425,5,636,35"/>
+<area shape="rect" id="node9" href="$structafg_1_1vConverter.html" title="afg::vConverter\&lt; VDT1, VDT2 \&gt;" alt="" coords="425,59,636,88"/>
+<area shape="rect" id="node23" href="$structafg_1_1eConverter.html" title="afg::eConverter\&lt; EDT, EDT \&gt;" alt="" coords="432,379,629,408"/>
+<area shape="rect" id="node25" href="$structafg_1_1eCopier.html" title="afg::eCopier\&lt; EDT \&gt;" alt="" coords="685,379,829,408"/>
+<area shape="rect" id="node29" href="$structafg_1_1vConverter.html" title="afg::vConverter\&lt; VDT, VDT \&gt;" alt="" coords="432,432,629,461"/>
+<area shape="rect" id="node31" href="$structafg_1_1vCopier.html" title="afg::vCopier\&lt; VDT \&gt;" alt="" coords="685,432,829,461"/>
+</map>

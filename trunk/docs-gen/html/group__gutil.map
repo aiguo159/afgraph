@@ -1,0 +1,6 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__gconvert.html" title="graph convertors" alt="" coords="171,5,288,35"/>
+<area shape="rect" id="node3" href="$group__gexport.html" title="graph export utilities" alt="" coords="160,59,299,88"/>
+<area shape="rect" id="node4" href="$group__graphgen.html" title="graph generators" alt="" coords="171,112,288,141"/>
+<area shape="rect" id="node5" href="$group__ginput.html" title="graph input utilities" alt="" coords="164,165,295,195"/>
+</map>

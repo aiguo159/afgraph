@@ -1,0 +1,89 @@
+\batchmode
+
+\newcommand{\dontusepackage}[2][]{%
+  \@namedef{ver@#2.sty}{9999/12/31}%
+  \@namedef{opt@#2.sty}{#1}}
+%\dontusepackage{helvet}
+
+\documentclass[letterpaper]{article}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+
+% overwrite footer in doxygen.sty
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{}}
+\fancyfoot[LO]{\fancyplain{}{}}
+\fancyfoot[CO]{\fancyplain{}{\bfseries\scriptsize afgraph: A Framework for Graph Algorithms}}
+\fancyfoot[RO]{\fancyplain{}{}}
+
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+%\setlength{\textwidth}{6.5in}
+
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=2,numbers=left }
+\makeindex
+\setcounter{tocdepth}{2}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\vspace*{3.5cm}
+\begin{center}
+\textbf{
+{\Large afgraph }\\
+\vspace*{1cm}
+{\large A Framework for Graph Algorithms}\\
+\vspace*{2.0cm}
+\normal{Aiguo Fei} }\\
+\vspace*{5cm}
+\normal{Public Release 1.0}\\
+\vspace*{1cm}
+\small{May 2012}
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\clearpage\mbox{}\clearpage
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\cleardoublepage
+
+\setcounter{page}{1}
+\pagenumbering{arabic}

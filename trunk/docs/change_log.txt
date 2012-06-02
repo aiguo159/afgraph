@@ -1,0 +1,49 @@
+* 2012/05:
+
+Created a simple example.
+
+Wrote some short introduction and "get started" documentation.
+
+===
+
+* 2011/12 - 2012/01:
+
+Updated to compile using current version of g++, mostly by adding
+	"typename" at lots of places.
+Changed indentation from using spaces to tabs, and other formatting using astyle.
+Changed to use scons for test programs, removed VC++ project files, made sure
+	everything still compiles with MS Visual C++ 2010.
+Changed license from GPL to less-restrictive BSD-like.
+
+===
+
+* 2008/08/25:
+
+Code updated for compliance with more recent C++ standard/implementation.
+Most in the following:
+(1) to make compiler happy, added typename in a lot of places where one can
+	get by without before;
+(2) typedef in base class with template may not be used in derived class
+	without proper qualifier;
+(3) methods inherited from base class with template may require "this->"
+	qualifier to use in derived classes.
+
+Code tested with the following compiler/environments:
+(1) gcc 4.2.3 on Linux (ubuntu, 32-bit and 64-bit)
+(2) gcc 3.4.4 on Cygwin (Windows XP)
+(3) Microsoft Visual C++ Express 2005
+
+===
+
+* 2001/10/08:
+
+All code had been tested with Visual C++ 6.0 (service pack 4)
+	on Windows, g++ 2.95.2 on Linux, Cygwin and Solaris, g++ 2.96
+	one Linux.
+External release for the first time.
+
+===
+
+* 1999 - 2001:
+
+Let there be code, baby, let there be code.

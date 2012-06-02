@@ -1,0 +1,18 @@
+# default integer id, integer weight, uni-directional
+#
+# format die for: default integer id (from 0 to n-1) and arbitrary edge data
+# no need to list vertices, edges given by index1 index2 edge_data
+die
+# number of nodes
+3
+#
+# number of edges
+2
+#
+# directional: di for direational, bi for bi-directional,
+# un for un-directional
+di
+# list of arcs, integer weight
+0 1 1
+2 0 3
+

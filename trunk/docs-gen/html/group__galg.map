@@ -1,0 +1,8 @@
+<map id="structs" name="structs">
+<area shape="rect" id="node1" href="$group__ggenalg.html" title="general graph algorithms" alt="" coords="189,5,352,35"/>
+<area shape="rect" id="node2" href="$group__trutils.html" title="tree related utilities" alt="" coords="205,59,336,88"/>
+<area shape="rect" id="node3" href="$group__spantree.html" title="spanning tree algorithms" alt="" coords="189,112,352,141"/>
+<area shape="rect" id="node4" href="$group__gspalg.html" title="shortest&#45;path algorithms" alt="" coords="189,165,352,195"/>
+<area shape="rect" id="node6" href="$group__sptree.html" title="shortest&#45;path tree algorithms" alt="" coords="177,219,364,248"/>
+<area shape="rect" id="node7" href="$group__ttrav.html" title="tree transversal algorithms" alt="" coords="183,272,359,301"/>
+</map>
